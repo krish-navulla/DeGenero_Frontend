@@ -1,8 +1,10 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Button from './Button';
 import { TiLocationArrow, TiLocationArrowOutline } from 'react-icons/ti';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+gsap.registerPlugin(ScrollTrigger)
 
 const Hero = () => {
     const [currentIndex, setCurrentIndex] = useState(1);
@@ -23,6 +25,12 @@ const Hero = () => {
         setHasClicked(true)
         setCurrentIndex(upcomingVideoIndex)
     }
+
+    useEffect(()=> {
+        if (loadedVideos === totalVideos - 1){
+            setIsLoading(false)
+        }
+    })
 
     useGSAP(() => {
         if (hasClicked) {
@@ -47,10 +55,43 @@ const Hero = () => {
         }
     }, {dependencies: [currentIndex], revertOnUpdate: true})
 
-    const getVideoSrc = (index) => `videos/hero-${index}.mp4`
+    useGSAP( ()=>{
+        gsap.set('#video-frame', {
+            // clipPath: 'polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%)',
+            clipPath : 'polygon(14% 0%, 72% 0%, 90% 90%, 0% 100%)',
+            bordorRadius: '0 0 40% 10%'
+        })
+
+        gsap.from('#video-frame', {
+            clipPath : 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+            bordorRadius: '0 0 0 0',
+            ease: 'power1.inOut',
+            scrollTrigger: {
+                trigger: '#video-frame',
+                start: 'center center',
+                end: 'bottom center',
+                scrub: true
+            }
+        })
+
+
+    })
+
+    const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
 
     return (
         <div className="relative h-dvh w-screen overflow-x-hidden">
+            {isLoading && (
+            <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
+                <div className="three-body">
+                    <div className="three-body__dot" />
+                    <div className="three-body__dot" />
+                    <div className="three-body__dot" />
+
+                </div>
+            </div>
+            )}
+
             <div id="video-frame" className='relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75'>
                 <div>
                 <div className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
@@ -102,10 +143,12 @@ const Hero = () => {
                 
                 </div>
                 <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
-                    G<b>A</b>MING
+                    Imp<b>A</b>ct
                 </h1>
             </div>
+
             </div>
+
         </div>
         
     )
