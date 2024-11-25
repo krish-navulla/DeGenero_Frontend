@@ -8,13 +8,15 @@ jobs:
     name: Run Pull
     runs-on: ubuntu-latest
     steps:
-      - name: Set up SSH keys
+      - name: Start SSH agent and add key
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+          eval "$(ssh-agent -s)" # Start the SSH agent
+          echo "1234" | ssh-add ~/.ssh/id_rsa # Provide passphrase to the private key
           ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
-
+        
       - name: Connect and Pull Changes
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
