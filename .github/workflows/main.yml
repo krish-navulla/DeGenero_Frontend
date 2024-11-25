@@ -1,27 +1,47 @@
+name: Deploy to Paperspace Server
+
 on:
   push:
     branches:
-      - main
+      - main # Trigger deployment on pushes to the main branch
 
 jobs:
-  run_pull:
-    name: Run Pull
+  deploy:
+    name: Deploy Application
     runs-on: ubuntu-latest
+
     steps:
-      - name: Start SSH agent and add key
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up SSH Agent
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" | sed 's/\\n/\n/g' > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          eval "$(ssh-agent -s)" # Start the SSH agent
-          echo "1234" | ssh-add ~/.ssh/id_rsa # Provide passphrase to the private key
+          eval "$(ssh-agent -s)"
+          echo "${{ secrets.SSH_PASSPHRASE }}" | ssh-add ~/.ssh/id_rsa
           ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
-        
-      - name: Connect and Pull Changes
-        run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
-          "cd ${{ secrets.WORK_DIR }} && git checkout ${{ secrets.MAIN_BRANCH }} && git pull"
 
-      - name: Cleanup
+      - name: Deploy to Server
         run: |
-          rm -rf ~/.ssh
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+          # Create deployment directory if it doesn't exist
+          mkdir -p ${{ secrets.WORK_DIR }}
+
+          # Navigate to the deployment directory
+          cd ${{ secrets.WORK_DIR }}
+
+          # Pull the latest code
+          if [ -d .git ]; then
+            git reset --hard
+            git pull origin main
+          else
+            git clone https://github.com/krish-navulla/DeGenero_Frontend.git  .
+          fi
+
+          # Install dependencies and start application (adjust as needed)
+          npm install
+          npm run dev
+          # pm2 restart app || pm2 start npm --name "app" -- start
+          EOF
