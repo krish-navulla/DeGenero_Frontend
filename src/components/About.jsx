@@ -21,8 +21,8 @@ const About = () => {
         })
 
         clipAnimation.to('.mask-clip-path', {
-            width:'50vw',
-            height:'50vh',
+            width:'0vw',
+            height:'0vh',
             borderRadius:0,
         })
 
