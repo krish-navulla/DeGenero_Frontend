@@ -21,8 +21,8 @@ const About = () => {
         })
 
         clipAnimation.to('.mask-clip-path', {
-            width:'0vw',
-            height:'0vh',
+            width:'100vw',
+            height:'100vh',
             borderRadius:0,
         })
 
@@ -101,36 +101,69 @@ const About = () => {
     return (
     <div  id="about" className="min-h-screen w-screen">
         <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
-            <h2 className="font-general text-sm uppercase md:text-[1rem]">
+            {/* <h2 className="font-general text-sm uppercase md:text-[1rem]">
             Why Choose De Genero for Your Reporting Needs?
-            </h2>
-            <AnimatedTitle title= "<b>T</b>imely, <b>A</b>ccurate data with customizable reports"
+            </h2> */}
+            <AnimatedTitle title= "<b>API</b> Integration"
             containerClass="mt-5 !text-black text-center"/>
 
 
             <div className="about-subtext">
-                <p>De Genero simplifies social impact reporting with innovative, real-time solutions, empowering organizations to drive transparency, efficiency, and meaningful change.
+                <p> and many more.
                 </p>
             </div>
         </div>
-        <div className="h-dvh w-screen" id="clip">
-            <div className="mask-clip-path about-image">
-                <img 
-                src="public\img\about.png"
-                alt="Background"
-                className="absolute left-0 top-0 size-full object-cover"
-                />
-            </div>
+        <div className=" w-screen">
+      <div className="grid h-80 w-full grid-cols-3 grid-rows-2 gap-2">
+        {/* Image 1 */}
+        <div className="flex items-center justify-center row-span-1 md:col-span-1 ms-32 md:ms-0">
+          <img
+            src="public/img/api.jpg"
+            alt="Background"
+            className="max-w-full max-h-full object-contain"
+          />
         </div>
-        {/* <div className="h-dvh w-screen mt-36">
-        <div class="features">
-            <div class="feature" id="feature1">Feature 1 Content</div>
-            <div class="feature" id="feature2">Feature 2 Content</div>
-            <div class="feature" id="feature3">Feature 3 Content</div>
-            <div class="feature" id="feature4">Feature 4 Content</div>
+        {/* Image 2 */}
+        <div className="flex items-center justify-center row-span-1 md:col-span-1 ms-32 md:ms-0">
+          <img
+            src="public/img/api6.png"
+            alt="Background"
+            className="max-w-full max-h-full object-contain"
+          />
         </div>
-        </div> */}
+        {/* Image 3 */}
+        <div className="flex items-center justify-center row-span-1 md:col-span-1 ms-32 md:ms-0">
+          <img
+            src="public/img/api1.jpg"
+            alt="Background"
+            className="max-w-full max-h-full object-contain"
+          />
+        </div>
+        {/* Image 4 */}
+        <div className="flex items-center justify-center row-span-1 md:col-span-1 ms-32 md:ms-0">
+          <img
+            src="public/img/api3.webp"
+            alt="Background"
+            className="max-w-full max-h-full object-contain"
+          />
+        </div>
+        <div className="flex items-center justify-center row-span-1 md:col-span-1 ms-32 md:ms-0">
+          <img
+            src="public/img/api4.jpg"
+            alt="Background"
+            className="max-w-full max-h-full object-contain"
+          />
+        </div>
+        <div className="flex items-center justify-center row-span-1 md:col-span-1 ms-32 md:ms-0">
+          <img
+            src="public/img/api5.png"
+            alt="Background"
+            className="max-w-full max-h-full object-contain"
+          />
+        </div>
+      </div>
 
+    </div>
     </div>
     )
 }

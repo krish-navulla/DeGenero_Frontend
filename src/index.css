@@ -257,6 +257,10 @@ body {
 
 }
 
+.custom-bento {
+  width: 100% !important; /* Ensure it overrides parent component styles */
+}
+
 
 @keyframes spin78236 {
   0% {
