@@ -77,7 +77,7 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
 };
 
 const Features = () => (
-  <section className="bg-slate-800 ">
+  <section id = "about" className="bg-slate-800 ">
     <div className="container mx-auto px-3 md:px-10">
       <div className="pt-10 pb-10 flex flex-col items-center text-center gap-4">
         <p className="font-circular-web text-lg text-blue-50">

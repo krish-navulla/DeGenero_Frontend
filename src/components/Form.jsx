@@ -31,7 +31,7 @@ const Form = () => {
 
 
     return (
-    <div  id="contact" className="min-h-screen w-screen">
+    <div  id="contact" className="min-h-screen w-screen bg-slate-300 ">
         <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
             {/* <h2 className="font-general text-sm uppercase md:text-[1rem]">
             Why Choose De Genero for Your Reporting Needs?

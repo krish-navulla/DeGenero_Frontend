@@ -99,7 +99,7 @@ const About = () => {
     })
 
     return (
-    <div  id="about" className="min-h-screen w-screen">
+    <div  id="" className="min-h-screen w-screen">
         <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
             {/* <h2 className="font-general text-sm uppercase md:text-[1rem]">
             Why Choose De Genero for Your Reporting Needs?
@@ -118,7 +118,7 @@ const About = () => {
         {/* Image 1 */}
         <div className="flex items-center justify-center row-span-1 md:col-span-1 ms-32 md:ms-0">
           <img
-            src="img/api.jpg"
+            src="img/file1.png"
             alt="Background"
             className="max-w-full max-h-full object-contain"
           />
@@ -126,7 +126,7 @@ const About = () => {
         {/* Image 2 */}
         <div className="flex items-center justify-center row-span-1 md:col-span-1 ms-32 md:ms-0">
           <img
-            src="img/api6.png"
+            src="img/file3.png"
             alt="Background"
             className="max-w-full max-h-full object-contain"
           />
@@ -134,7 +134,7 @@ const About = () => {
         {/* Image 3 */}
         <div className="flex items-center justify-center row-span-1 md:col-span-1 ms-32 md:ms-0">
           <img
-            src="img/api1.jpg"
+            src="img/file.png"
             alt="Background"
             className="max-w-full max-h-full object-contain"
           />
@@ -149,7 +149,7 @@ const About = () => {
         </div>
         <div className="flex items-center justify-center row-span-1 md:col-span-1 ms-32 md:ms-0">
           <img
-            src="img/api4.jpg"
+            src="img/file2.png"
             alt="Background"
             className="max-w-full max-h-full object-contain"
           />
