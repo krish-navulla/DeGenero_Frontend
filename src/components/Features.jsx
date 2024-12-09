@@ -59,16 +59,16 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
   return (
     <div className="relative size-full">
 
-      <div className="relative z-10 flex size-full flex-col justify-between p-5 text-blue-50">
+      <div className="relative z-10 flex size-full flex-col justify-between p-5 text-gray-300">
         <div>
-          <h1 className="bento-title special-font">{title}</h1>
+          <h1 className="uppercase md:text-4xl text-2xl font-black font-zentry special-font">{title}</h1>
           {description && (
-            <p className="mt-3 w-full text-xl md:text-xl">{description}</p>
+            <p className="mt-3 mb-3 w-full text-xl md:text-xl">{description}</p>
           )}
         </div>
           <img
         src={src}
-        className="relative left-0 top-0 size-full object-cover object-center"
+        className=" object-fillrelative left-0 top-0 size-full object-cover object-center"
       />
       </div>
 
@@ -77,9 +77,9 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
 };
 
 const Features = () => (
-  <section className="bg-slate-800 pb-52">
+  <section className="bg-slate-800 ">
     <div className="container mx-auto px-3 md:px-10">
-      <div className="px-5 py-32">
+      <div className="pt-10 pb-10 flex flex-col items-center text-center gap-4">
         <p className="font-circular-web text-lg text-blue-50">
           Into the Impact Layer
         </p>
@@ -106,10 +106,10 @@ const Features = () => (
         />
       </BentoTilt>
 
-      <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-7">
-        <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
+      <div className="grid h-auto pb-10 w-full grid-cols-auto grid-rows-auto gap-7 lg:grid-cols-2 lg:grid-rows-2">
+        <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-1">
           <BentoCard
-            src="img/datamanagement.webp"
+            src="img/datamanagement.jpg"
             title={
               <>
                 Efficient <b>D</b>ata Management
@@ -122,7 +122,7 @@ const Features = () => (
 
         <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
           <BentoCard
-            src="img/impact.webp"
+            src="img/Custom-Reports.png"
             title={
               <>
                 Customise your <b>I</b>mpact Reports
@@ -143,6 +143,18 @@ const Features = () => (
               </>
             }
             description="Present complex data clearly, customise views to highlight key information, and generate comprehensive reports effortlessly."
+            isComingSoon
+          />
+        </BentoTilt>
+        <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
+          <BentoCard
+            src="img/attractInvestors.jpg"
+            title={
+              <>
+                <b>M</b>aximise Your Funding Opportunities
+              </>
+            }
+            description="Create detailed impact reports and use real-time data to attract investors. Enhance transparency and trust with accurate data."
             isComingSoon
           />
         </BentoTilt>

@@ -121,7 +121,7 @@ const Hero = () => {
                 /> */}
                 <video 
                 // src={getVideoSrc(currentIndex === totalVideos - 1 ? 1: currentIndex)}
-                src={getVideoSrc(1)}
+                src={getVideoSrc(2)}
                 autoPlay
                 loop
                 muted
@@ -141,7 +141,8 @@ const Hero = () => {
                     Amplify your impact with real-time reporting</p>
                 
                     <Button 
-                    id="watch-trailer" title="Start your Impact Journey" leftIcon={<TiLocationArrow />}
+                    id="watch-trailer" scrollToId="form" title="Start your Impact Journey" leftIcon={<TiLocationArrow />}
+                    
                     containerClass="bg-yellow-300 flex-center gap-1"/>
                 
                 </div>
