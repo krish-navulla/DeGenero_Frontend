@@ -114,9 +114,9 @@ const About = () => {
             </div> */}
         </div>
         <div className="w-screen ">
-      <div className="grid h-auto w-full grid-cols-auto grid-rows-auto lg:grid-cols-3 lg:grid-rows-2 sm:grid-cols-1">
+      <div className="grid h-auto w-full grid-cols-auto grid-rows-auto md:grid-cols-3 md:grid-rows-2  lg:grid-cols-3 lg:grid-rows-2 sm:grid-cols-2 sm:grid-rows-3">
         {/* Image 1 */}
-        <div className="flex items-center justify-center row-span-1 md:col-span-1 lg:ms-32 md:ms-0 lg:w-4/6 lg:h-4/6 sm:w-2/6 sm:h-2/6">
+        <div className="flex items-center justify-center row-span-1 md:col-span-1 lg:ms-32 md:ms-0 lg:w-4/6 lg:h-4/6 ">
           <img
             src="img/file1.png"
             alt="Background"
@@ -124,7 +124,7 @@ const About = () => {
           />
         </div>
         {/* Image 2 */}
-        <div className="flex items-center justify-center row-span-1 md:col-span-1 lg:ms-32 md:ms-0 lg:w-4/6 lg:h-4/6">
+        <div className="flex items-center justify-center row-span-1 md:col-span-1 lg:ms-32 md:ms-0 lg:w-4/6 lg:h-4/6 ">
           <img
             src="img/file3.png"
             alt="Background"
