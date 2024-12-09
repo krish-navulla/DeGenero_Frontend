@@ -118,7 +118,7 @@ const About = () => {
         {/* Image 1 */}
         <div className="flex items-center justify-center row-span-1 md:col-span-1 ms-32 md:ms-0">
           <img
-            src="public/img/api.jpg"
+            src="img/api.jpg"
             alt="Background"
             className="max-w-full max-h-full object-contain"
           />
@@ -126,7 +126,7 @@ const About = () => {
         {/* Image 2 */}
         <div className="flex items-center justify-center row-span-1 md:col-span-1 ms-32 md:ms-0">
           <img
-            src="public/img/api6.png"
+            src="img/api6.png"
             alt="Background"
             className="max-w-full max-h-full object-contain"
           />
@@ -134,7 +134,7 @@ const About = () => {
         {/* Image 3 */}
         <div className="flex items-center justify-center row-span-1 md:col-span-1 ms-32 md:ms-0">
           <img
-            src="public/img/api1.jpg"
+            src="img/api1.jpg"
             alt="Background"
             className="max-w-full max-h-full object-contain"
           />
@@ -142,21 +142,21 @@ const About = () => {
         {/* Image 4 */}
         <div className="flex items-center justify-center row-span-1 md:col-span-1 ms-32 md:ms-0">
           <img
-            src="public/img/api3.webp"
+            src="img/api3.webp"
             alt="Background"
             className="max-w-full max-h-full object-contain"
           />
         </div>
         <div className="flex items-center justify-center row-span-1 md:col-span-1 ms-32 md:ms-0">
           <img
-            src="public/img/api4.jpg"
+            src="img/api4.jpg"
             alt="Background"
             className="max-w-full max-h-full object-contain"
           />
         </div>
         <div className="flex items-center justify-center row-span-1 md:col-span-1 ms-32 md:ms-0">
           <img
-            src="public/img/api5.png"
+            src="img/api5.png"
             alt="Background"
             className="max-w-full max-h-full object-contain"
           />
