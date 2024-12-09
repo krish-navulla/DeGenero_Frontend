@@ -141,7 +141,7 @@ const Hero = () => {
                     Amplify your impact with real-time reporting</p>
                 
                     <Button 
-                    id="watch-trailer" scrollToId="form" title="Start your Impact Journey" leftIcon={<TiLocationArrow />}
+                    id="watch-trailer" scrollToId="contact" title="Start your Impact Journey" leftIcon={<TiLocationArrow />}
                     
                     containerClass="bg-yellow-300 flex-center gap-1"/>
                 

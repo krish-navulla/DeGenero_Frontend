@@ -108,23 +108,23 @@ const About = () => {
             containerClass="mt-5 !text-black text-center"/>
 
 
-            <div className="about-subtext">
+            {/* <div className="about-subtext">
                 <p> and many more.
                 </p>
-            </div>
+            </div> */}
         </div>
-        <div className=" w-screen">
-      <div className="grid h-80 w-full grid-cols-3 grid-rows-2 gap-2">
+        <div className="w-screen ">
+      <div className="grid h-auto w-full grid-cols-auto grid-rows-auto lg:grid-cols-3 lg:grid-rows-2 sm:grid-cols-1">
         {/* Image 1 */}
-        <div className="flex items-center justify-center row-span-1 md:col-span-1 ms-32 md:ms-0">
+        <div className="flex items-center justify-center row-span-1 md:col-span-1 lg:ms-32 md:ms-0 lg:w-4/6 lg:h-4/6 sm:w-2/6 sm:h-2/6">
           <img
             src="img/file1.png"
             alt="Background"
-            className="max-w-full max-h-full object-contain"
+            className="max-w-full max-h-full object-contain "
           />
         </div>
         {/* Image 2 */}
-        <div className="flex items-center justify-center row-span-1 md:col-span-1 ms-32 md:ms-0">
+        <div className="flex items-center justify-center row-span-1 md:col-span-1 lg:ms-32 md:ms-0 lg:w-4/6 lg:h-4/6">
           <img
             src="img/file3.png"
             alt="Background"
@@ -132,7 +132,7 @@ const About = () => {
           />
         </div>
         {/* Image 3 */}
-        <div className="flex items-center justify-center row-span-1 md:col-span-1 ms-32 md:ms-0">
+        <div className="flex items-center justify-center row-span-1 md:col-span-1 lg:ms-32 md:ms-0 lg:w-4/6 lg:h-4/6">
           <img
             src="img/file.png"
             alt="Background"
@@ -140,21 +140,21 @@ const About = () => {
           />
         </div>
         {/* Image 4 */}
-        <div className="flex items-center justify-center row-span-1 md:col-span-1 ms-32 md:ms-0">
+        <div className="flex items-center justify-center row-span-1 md:col-span-1 lg:ms-32 md:ms-0 lg:w-4/6 lg:h-4/6">
           <img
             src="img/api3.webp"
             alt="Background"
             className="max-w-full max-h-full object-contain"
           />
         </div>
-        <div className="flex items-center justify-center row-span-1 md:col-span-1 ms-32 md:ms-0">
+        <div className="flex items-center justify-center row-span-1 md:col-span-1 lg:ms-32 md:ms-0 lg:w-4/6 lg:h-4/6">
           <img
             src="img/file2.png"
             alt="Background"
             className="max-w-full max-h-full object-contain"
           />
         </div>
-        <div className="flex items-center justify-center row-span-1 md:col-span-1 ms-32 md:ms-0">
+        <div className="flex items-center justify-center row-span-1 md:col-span-1 lg:ms-32 md:ms-0 lg:w-4/6 lg:h-4/6">
           <img
             src="img/api5.png"
             alt="Background"
